@@ -10,12 +10,12 @@
 
 let map: google.maps.Map;
 let service: google.maps.places.PlacesService;
-let infowindow: google.maps.InfoWindow;
+let infoWindow: google.maps.InfoWindow;
 
 function initMap(): void {
   const sydney = new google.maps.LatLng(-33.867, 151.195);
 
-  infowindow = new google.maps.InfoWindow();
+  infoWindow = new google.maps.InfoWindow();
 
   map = new google.maps.Map(document.getElementById("map") as HTMLElement, {
     center: sydney,
@@ -55,8 +55,8 @@ function createMarker(place: google.maps.places.PlaceResult) {
   });
 
   google.maps.event.addListener(marker, "click", () => {
-    infowindow.setContent(place.name || "");
-    infowindow.open(map);
+    infoWindow.setContent(place.name || "");
+    infoWindow.open(map);
   });
 }
 
